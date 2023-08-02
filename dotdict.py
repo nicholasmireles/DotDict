@@ -3,6 +3,9 @@ from argparse import Namespace
 
 
 class dotDict(Namespace):
+    """A simple class that builds upon `argparse.Namespace`
+    in order to make chained attributes possible."""
+
     def __eq__(self, other):
         if not isinstance(other, dotDict):
             return NotImplemented
