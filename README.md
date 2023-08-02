@@ -28,7 +28,7 @@ config.users.foo = 'bar'
 ```
 
 ## Installation
-Installation is simple: From this directory, run `pip install .`
+Installation is simple: `pip install attr-dot-dict`. Alternatively: `pip install .` from the root of the repository.
 
 ## Usage
 Usage is equally as simple:
