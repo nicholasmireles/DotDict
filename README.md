@@ -3,7 +3,7 @@ A simple Python library that builds upon `argparse.Namespace` to make chained at
 
 ## Why?
 Configs of all kinds follow a dict-like structure. 
-However, nobody likes the `dict[key]` syntax. We all much prefer the `dict.key` syntax.
+However, nobody likes the `dict["key"]` syntax. We all much prefer the `dict.key` syntax.
 
 There are a number of workarounds for this, including `easydict` or `argparse.Namespace` (upon which this library is based).
 
