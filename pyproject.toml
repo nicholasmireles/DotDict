@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dotdict"
+authors = [
+    {name = "Nick Mireles", email = "nick.mireles@dave.com"},
+]
+description = "A simple class that allows for the chaining of attributes."
+readme = "README.md"
+requires-python = ">=3.7"
+license = {file = "LICENSE"}
+version = "0.0.1"
