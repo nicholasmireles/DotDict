@@ -5,15 +5,15 @@ A simple Python library that builds upon `argparse.Namespace` to make chained at
 Configs of all kinds follow a dict-like structure. 
 However, nobody likes the `dict[key]` syntax. We all much prefer the `dict.key` syntax.
 
-There are a number of workarounds for this, including `defaultdict` or `argparse.Namespace` (upon which this library is based).
+There are a number of workarounds for this, including `easydict` or `argparse.Namespace` (upon which this library is based).
 
 The downside of these libraries, though, is that when you want to start a new level, you must explicitly define it first. For example:
 ``` python
-config = defaultdict()
+config = edict()
 
 config.host = 'localhost'
 
-config.users = defaultdict()
+config.users = edict() # or {}
 config.users.foo = 'bar'
 ```
 
