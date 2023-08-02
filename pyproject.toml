@@ -3,7 +3,7 @@ requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "dotdict"
+name = "attr-dot-dict"
 authors = [
     {name = "Nick Mireles", email = "nick.mireles@dave.com"},
 ]
