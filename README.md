@@ -33,7 +33,7 @@ Installation is simple: From this directory, run `pip install .`
 ## Usage
 Usage is equally as simple:
 ```python
-from DotDict import DotDict as dd
+from dotdict import DotDict as dd
 
 x = dd()
 
