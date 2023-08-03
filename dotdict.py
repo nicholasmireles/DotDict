@@ -17,20 +17,21 @@ class DotDict(Namespace):
         return vars(self) == vars(other)
 
     def __getattr__(self, __name: str) -> Any:
-        if __name not in self.__dict__ and not self.temp:
+        if __name not in self.__dict__ and not self._temp:
             self.__dict__[__name] = DotDict(temp=True, key=__name, parent=self)
         else:
-            del self.parent.__dict__[self.key]
+            del self._parent.__dict__[self._key]
             raise AttributeError("No attribute '%s'" % __name)
         return self.__dict__[__name]
 
     def __repr__(self) -> str:
-        num_items = len([k for k in self.__dict__ if not k.startswith("_")])
+        item_keys = [k for k in self.__dict__ if not k.startswith("_")]
 
-        if num_items == 0:
+        if len(item_keys) == 0:
             return "DotDict()"
-        elif num_items == 1:
-            key, val = self.__dict__.items()[0]
+        elif len(item_keys) == 1:
+            key = item_keys[0]
+            val = self.__dict__[key]
             return "DotDict(%s=%s)" % (key, repr(val))
         else:
             return "DotDict(%s)" % ", ".join(
