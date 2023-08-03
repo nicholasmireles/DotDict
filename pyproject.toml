@@ -11,4 +11,4 @@ description = "A simple class that allows for the chaining of attributes."
 readme = "README.md"
 requires-python = ">=3.7"
 license = {file = "LICENSE"}
-version = "0.0.2"
+version = "0.1.0"
