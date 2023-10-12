@@ -1,5 +1,6 @@
 from typing import Any
 from argparse import Namespace
+import typing
 
 
 class DotDict(Namespace):
@@ -37,3 +38,16 @@ class DotDict(Namespace):
             return "DotDict(%s)" % ", ".join(
                 "%s=%s" % (key, repr(val)) for key, val in self.__dict__.items()
             )
+
+    @classmethod
+    def from_dict(cls, original: typing.Mapping[str, any]) -> "DotDict":
+        """Create a DotDict from a (possibly nested) dict `original`.
+        Warning: this method should not be used on very deeply nested inputs,
+        since it's recursively traversing the nested dictionary values.
+        """
+        dd = DotDict()
+        for key, value in original.items():
+            if isinstance(value, typing.Mapping):
+                value = cls.from_dict(value)
+            setattr(dd, key, value)
+        return dd
